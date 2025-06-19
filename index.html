@@ -4,37 +4,434 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>serifsirf</title>
+    <link rel="icon" type="image/x-icon" href="/img/ICON.png">
     <style>
-        html, body {
-            height:100%;
+
+        body {
+            margin: 1%;
+            background-color: rgb(27, 25, 25);
+            font-family: Arial, Helvetica, sans-serif;
+
         }
 
-        .center {
-            margin: auto;
-            position: relative;
-            text-align: center;
-            top: 35%;
-            width: 20%;  
+        .header {
+            font-size: x-large;
+            display: flex;
+            margin-left: 5%;
+            user-select: none;
+            
+            
+        }
+
+        #window-gif {
+            width: 23%;
+            user-select: none;
+            
+        }
+
+        #header-links {
+            padding-top: 70px;
+            margin: 1%;
+            flex-grow: 0.83;
+            
+        }
+
+        @media screen and (max-width: 900px) {
+            #header-links {
+                flex-grow: 0.1;
+            } 
+        }
+
+        #coolicon {
+            padding-top: 50px;
+        }
+
+
+        /* temporary */
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(255, 219, 152);
+        }
+
+        p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
         }
 
         a {
-            color: red;
             text-decoration: none;
+            color: rgb(151, 151, 151);
         }
 
-        a:hover {
-            font-weight: bold;
-            font-size: larger;
-            text-decoration: underline;
+        a:active {
+            color: rgb(255, 174, 0);
         }
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        .column {
+            flex: 25%;
+            max-width: 24%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+
+
+
+        #mainabout {
+            display: flex;
+            font-size: larger;
+            user-select: none;
+            justify-content: space-evenly;
+            margin: 5%;
+        }
+
+        #aboutsimple {
+
+            border-style: dashed;
+            border-color: #ffcd2713;
+            border-width: 7px;
+            padding: 1%;
+            
+            background-color: #ffd9000a;
+            border-radius: 30px;
+            max-width: 50%;
+            transform: rotate(-2deg);
+        }
+
+        
+
+        #moreaboutme {
+            font-size: 23px;
+            color: rgb(255, 174, 0);
+        }
+
+        #moreaboutme:active {
+            color: #ce0404;
+        }
+
+
+        @media screen and (max-width: 850px) {
+            .column {
+                
+                flex: 45%;
+                max-width: 55%;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+
+        #art {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #art:hover {
+            opacity: 0.7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            padding-top: 20px;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(15, 11, 11, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 600px;
+               
+        }
+
+
+        .modal-content {
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scaleY(0);
+            }
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px; 
+            color: #f1f1f1;
+            font-size: 70px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #ce0404;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+                
+            }
+        }
+
+        @-webkit-keyframes hvr-hang {
+        0% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        50% {
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+        }
+        100% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        }
+        @keyframes hvr-hang {
+        0% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        50% {
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+        }
+        100% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        }
+        @-webkit-keyframes hvr-hang-sink {
+        100% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        }
+        @keyframes hvr-hang-sink {
+        100% {
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+        }
+        .hvr-hang {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        .hvr-hang:hover, .hvr-hang:focus {
+        -webkit-animation-name: hvr-hang-sink, hvr-hang;
+        animation-name: hvr-hang-sink, hvr-hang;
+        -webkit-animation-duration: .3s, 1.5s;
+        animation-duration: .3s, 1.5s;
+        -webkit-animation-delay: 0s, .3s;
+        animation-delay: 0s, .3s;
+        -webkit-animation-timing-function: ease-out, ease-in-out;
+        animation-timing-function: ease-out, ease-in-out;
+        -webkit-animation-iteration-count: 1, infinite;
+        animation-iteration-count: 1, infinite;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-direction: normal, alternate;
+        animation-direction: normal, alternate;
+        }
+
+        .hvr-hang:active {
+            scale: 0.95;
+        }
+
+
 
     </style>
-</head>
+
+    </head>
     <body>
-        <div class="center">
-            <h1>UNDER CONSTRUCTION >_< SORRY LOLZ</h1>
-            <a href="https://coderserif.github.io">back to normal</a>
+        <div class="header">
+            <div id="window-gif"></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="header-links">
+                <a href="#" id="homelink">home</a>
+                <span>&nbsp;&nbsp;</span>
+                <a href="https://coderserif.github.io" target="_blank">coderserif &#8599;</a>
+                <span>&nbsp;&nbsp;</span>
+                <a href="#" id="linkslink">links</a>
+                <span>&nbsp;&nbsp;</span>
+                <a href="#" id="fanartlink">fanart</a>
+                <span>&nbsp;&nbsp;</span>
+                <a href="#" id="aboutmelink">about me</a>
+                <span>&nbsp;&nbsp;</span>
+                
+            </div>
+            <div id="coolicon">
+                <audio id="sound1" src="/audio/rain.mp3" preload="auto"></audio>
+                <a href="#" onclick="document.getElementById('sound1').play();"><span class="hvr-hang" style="font-size: 80px;">&#9748;&#xFE0E;</span></a>
+            </div>
         </div>
-        
+
+        <div id="home">
+            <div class="row">
+                <div class="column">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/%E3%81%8A%E8%8C%B6%E4%B8%87%E8%91%89.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/kazuhaGLASSES.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/reigif.gif" class="showcase" id="art" draggable="false">
+                    <img src="/img/speen.gif" alt="" draggable="false">
+                    
+                </div>
+                <div class="column">             
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/BASILSUNNY.png" class="showcase" id="art" draggable="false">        
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/ANBY1.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/pictureperfectshuunichi.png" class="showcase" id="art" draggable="false">
+                </div>
+                <div class="column">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/MIKU!!.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/sunflowergift.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/pictureperfectreika.png" class="showcase" id="art" draggable="false">
+                </div>
+                <div class="column">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/2dparty.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/AKZUHA.png" class="showcase" id="art" draggable="false">
+                    <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/walkrun.gif" class="showcase" id="art" draggable="false">
+                    <img src="/img/speen.gif" alt="" draggable="false">
+                </div>
+            </div>
+            <div id="modal1" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="showimg" draggable="false">
+            </div >
+
+
+            <div id="mainabout">
+                <div style="width: 10%;">
+                    <img src="/img/ICONANIM.gif" alt="" draggable="false" style="width: 100%; image-rendering: pixelated; transform: rotate(3deg); ">
+                </div>
+                <div id="aboutsimple">
+                    <h1>&nbsp;&#9748;&#xFE0E; @serifsirf &nbsp;<a href="#" id="moreaboutme">more about me ></a></h1>
+                    <p>he/they | infj | 04/10 | &#127477&#127469 | ENG/TGL</p>
+                    <p>illustrator / aspiring animator! | lots of hobbies and interests! | learning how to get better everyday...</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!--TO DO: make div of links and fanarts and about me-->
+
+        <div class="header">
+                <div id="header-links">
+                    <a href="https://twitter.com/serifsirf" id="twitterlink">twitter</a>
+                    <span>&nbsp;&nbsp;</span>
+                    <a href="https://youtube.com/@serifsirf">youtube</a>
+                </div>
+                <div style="padding-top: 70px; margin: 1%;">
+                    <span style="color: #cccccc;">serifsirf 2025</span>
+            </div>
+        </div>
+
     </body>
+        <script>
+
+            const gifs = [
+                        "/img/serifsirfgift.gif",
+                        "/img/serifsirfgift2.gif",
+                        "/img/serifsirfgift3.gif"
+                        ];
+                
+            const random = Math.floor(Math.random() * gifs.length);
+
+            document.addEventListener("DOMContentLoaded", function(){
+                var elem = document.createElement("img");
+                elem.src = (random, gifs[random]);
+                elem.setAttribute("width", "100%");
+                elem.setAttribute("draggable", "false");
+                document.getElementById("window-gif").appendChild(elem);
+            });
+
+
+            var modal = document.getElementById('modal1');
+            var images = document.getElementsByClassName('showcase');
+            var modalImg = document.getElementById("showimg");
+            for (var i = 0; i < images.length; i++) {
+                var img = images[i];
+                img.onclick = function(evt) {
+                    console.log(evt);
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                }
+            }
+
+            var span = document.getElementsByClassName("close")[0];
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+
+
+
+            var home = document.getElementById("home");
+            var homelink = document.getElementById("homelink");
+            var linkslink = document.getElementById("linkslink");
+            var fanartlink = document.getElementById("fanartlink");
+            var aboutmelink = document.getElementById('aboutmelink');
+            var moreaboutme = document.getElementById('moreaboutme');
+
+            homelink.onclick = function() {
+                home.style.display = "block";
+            }
+
+            linkslink.onclick = function() {
+                home.style.display = "none";
+            }
+
+            fanartlink.onclick = function() {
+                home.style.display = "none";
+            }
+
+            aboutmelink.onclick = function() {
+                home.style.display = "none";
+            }
+
+            moreaboutme.onclick = function() {
+                home.style.display = "none";
+            }
+           
+
+
+    </script>
 </html>
