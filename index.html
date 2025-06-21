@@ -58,12 +58,13 @@
         /* temporary */
         h1 {
             font-family: 'Courier New', Courier, monospace;
-            color: rgb(255, 219, 152);
+            
         }
 
         p {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
+            font-size: 23px;
         }
 
         a {
@@ -85,8 +86,8 @@
         }
 
         .column {
-            flex: 25%;
-            max-width: 24%;
+            flex: 100;
+            max-width: 100%;
             padding: 0 4px;
         }
 
@@ -110,26 +111,53 @@
         #aboutsimple {
 
             border-style: dashed;
-            border-color: #ffcd2713;
             border-width: 7px;
             padding: 1%;
-            
-            background-color: #ffd9000a;
             border-radius: 30px;
-            max-width: 50%;
-            transform: rotate(-2deg);
+            
+
+
+            
+        }
+
+        #links {
+            position: relative;
+            width: 75%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .linkitems {
+            display: flex;
+            justify-content: space-evenly;
         }
 
         
 
         #moreaboutme {
-            font-size: 23px;
+            font-size: 24px;
             color: rgb(255, 174, 0);
         }
 
         #moreaboutme:active {
             color: #ce0404;
         }
+
+
+
+
+        #aboutmore {
+            width: 75%;
+            display: block;
+            margin: 0 auto;
+            user-select: none;
+        }
+
+
+
+
+
+
 
 
         @media screen and (max-width: 850px) {
@@ -155,6 +183,7 @@
         #art:hover {
             opacity: 0.7;
         }
+        
 
         .modal {
             display: none;
@@ -291,16 +320,14 @@
     </head>
     <body>
         <div class="header">
-            <div id="window-gif"></div>
+            <div id="window-gif" style="image-rendering: pixelated;"></div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="header-links">
                 <a href="#" id="homelink">home</a>
                 <span>&nbsp;&nbsp;</span>
-                <a href="https://coderserif.github.io" target="_blank">coderserif &#8599;</a>
+                <a href="https://coderserif.github.io" target="_blank">coderserif &#8599;&#xFE0E;</a>
                 <span>&nbsp;&nbsp;</span>
                 <a href="#" id="linkslink">links</a>
-                <span>&nbsp;&nbsp;</span>
-                <a href="#" id="fanartlink">fanart</a>
                 <span>&nbsp;&nbsp;</span>
                 <a href="#" id="aboutmelink">about me</a>
                 <span>&nbsp;&nbsp;</span>
@@ -318,7 +345,7 @@
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/%E3%81%8A%E8%8C%B6%E4%B8%87%E8%91%89.png" class="showcase" id="art" draggable="false">
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/kazuhaGLASSES.png" class="showcase" id="art" draggable="false">
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/reigif.gif" class="showcase" id="art" draggable="false">
-                    <img src="/img/speen.gif" alt="" draggable="false">
+                    <img src="/img/speen.gif" alt="" draggable="false" style="image-rendering: pixelated; transform: rotate(-45deg);">
                     
                 </div>
                 <div class="column">             
@@ -335,7 +362,7 @@
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/2dparty.png" class="showcase" id="art" draggable="false">
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/AKZUHA.png" class="showcase" id="art" draggable="false">
                     <img src="https://raw.githubusercontent.com/serifsirf/comics-and-assets/refs/heads/main/showcase/walkrun.gif" class="showcase" id="art" draggable="false">
-                    <img src="/img/speen.gif" alt="" draggable="false">
+                    <img src="/img/speen.gif" alt="" draggable="false" style="image-rendering: pixelated; transform: scaleY(-1) rotate(45deg)">
                 </div>
             </div>
             <div id="modal1" class="modal">
@@ -348,8 +375,8 @@
                 <div style="width: 10%;">
                     <img src="/img/ICONANIM.gif" alt="" draggable="false" style="width: 100%; image-rendering: pixelated; transform: rotate(3deg); ">
                 </div>
-                <div id="aboutsimple">
-                    <h1>&nbsp;&#9748;&#xFE0E; @serifsirf &nbsp;<a href="#" id="moreaboutme">more about me ></a></h1>
+                <div id="aboutsimple" style="color: rgb(255, 219, 152); transform: rotate(-1deg); background-color: #ffd9000a; border-color: #ffcd2713; max-width: 50%;">
+                    <h1>&nbsp;&#9748;&#xFE0E; @serifsirf <a href="#" id="moreaboutme">more about me ></a></h1>
                     <p>he/they | infj | 04/10 | &#127477&#127469 | ENG/TGL</p>
                     <p>illustrator / aspiring animator! | lots of hobbies and interests! | learning how to get better everyday...</p>
                 </div>
@@ -357,7 +384,103 @@
             
         </div>
 
-        <!--TO DO: make div of links and fanarts and about me-->
+
+        <div id="links">
+
+            <div id="linkitems">
+                <div id="aboutsimple" style="transform: rotate(-1deg); background-color: #00f7ff0a; border-color: #665bff13; user-select: none;">
+                    <a href="https://twitter.com/serifsirf" target="_blank"><h1 style="color: rgb(0, 162, 255);">[twitter] &#8599;&#xFE0E;</h1></a>
+                    <p>mainly drawings and silly ramblings from me ;p</p>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div id="linkitems">
+                <div id="aboutsimple" style="transform: rotate(1deg); background-color: #ff00000a; border-color: #ff434313; user-select: none;">
+                    <a href="https://youtube.com/@serifsirf" target="_blank"><h1 style="color: rgb(245, 95, 95);">[youtube] &#8599;&#xFE0E;</h1></a>
+                    <p>videos where i post whatever (i barely upload lol)</p>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div id="linkitems">
+                <div id="aboutsimple" style="transform: rotate(-1deg); background-color: #ff00950a; border-color: #ff07ea13; user-select: none;">
+                    <a href="https://coderserif.itch.io/" target="_blank"><h1 style="color: #ff7474;">[itch.io] &#8599;&#xFE0E;</h1></a>
+                    <p>games i made,, only for the strong willed...</p>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div id="linkitems">
+                <div id="aboutsimple" style="transform: rotate(1deg); background-color: #7a7a7a0a; border-color: #e6e6e613; user-select: none;">
+                    <a href="https://github.com/serifsirf/" target="_blank"><h1 style="color: #dbdbdb;">[github] &#8599;&#xFE0E;</h1></a>
+                    <p>the thing i used to make this</p>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div id="linkitems">
+                <div id="aboutsimple" style="transform: rotate(-1deg); background-color: #d400ff0a; border-color: #e03d2013; user-select: none;">
+                    <a href="https://ogghostjelly.github.io/" target="_blank"><h1 style="color: #ff6638;">[ogghostjelly] &#8599;&#xFE0E;</h1></a>
+                    <p>you should totally check him out ... maybe... yesss ;))</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="aboutme">
+            <div id="aboutmore">
+                <img src="/img/aboutmegift.gif" alt="" style="width: 40%;" draggable="false">
+                <p>> he/they | infj | 04/10 | &#127477&#127469 | ENG/TGL <</p>
+                <p>i do art and animation mainly of characters i like ~ i also enjoy playing guitar and making websites as a hobby!</p>
+                <hr>
+                <p>things i like:</p>
+                <p><span style="font-size: 50px; color: #cea904;">&#9748;&#xFE0E;&nbsp;</span> omori, UT/DR, ISAT | minecraft, ultrakill, portal, stanley parable | genshin, HSR, ZZZ | saihate station, YTTD, DDLC
+                <br>
+                <span style="font-size: 50px; color: #cea904;">&#9748;&#xFE0E;&nbsp;</span> gorillaz, arctic monkeys, coldplay, linkin park, twenty one pilots, MCR, BMTH, spiritbox | eve, yoasobi, inabakumori, ado, babymetal
+                <br>
+                <span style="font-size: 50px; color: #cea904; ">&#9748;&#xFE0E;&nbsp;</span> evangelion, death note, YYH, HXH | arcane, scott pilgrim | ALNST, PPF
+                </p>
+                <hr>
+                <img src="/img/questionsgift.gif" alt="" style="width: 37%;" draggable="false">
+                <p ><span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> didn't you make another website?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span> yeah but it looked kinda bad + also reeeeally laggy + needed something actually presentable instead of whatever that was lol. it's okay it still exists, <a href="https://coderserif.github.io" target="_blank">and you can go to it right now</a> if you want to.
+                    <br>
+                    <br>
+                    <span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> who are you?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span>did you not read
+                    <br>
+                    <br>
+                    <span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> where can i contact you?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span>pretty sure the only people that know of this website are people who ive sent the link to LOL or just people i know well. though i guess you can send something nice <a href="https://x.com/serifsirf" target="_blank">in my dms</a> if u want ;p (okay one day ill probably make a proper email when the time comes)
+                    <br>
+                    <br>
+                    <span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> what's with all the umbrella imagery?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span>i think its a good symbol that represents me well. even when there are hardships and struggles that i come across, i have my umbrellas i stay safe under and carry on.
+                    <br>
+                    <br>
+                    <span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> okay but what's it really about?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span>yeah that's the spirit
+                    <br>
+                    <br>
+                    <span style="font-size: 50px; color: #ce0404;">&#9748;&#xFE0E;&nbsp;</span> did people really ask these questions?
+                    <br>
+                    <span style="font-size: 50px; color: #04ce5f;">&nbsp;&nbsp;&nbsp;&nbsp;&#9748;&#xFE0E;&nbsp;</span><a href="/i lied.mp4" target="_blank">yes</a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        <!--TO DO: make div of links and about me-->
 
         <div class="header">
                 <div id="header-links">
@@ -371,7 +494,44 @@
         </div>
 
     </body>
-        <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+
+            var homelink = document.getElementById("homelink");
+            var linkslink = document.getElementById("linkslink");
+            var aboutmelink = document.getElementById('aboutmelink');
+            var moreaboutme = document.getElementById('moreaboutme');
+
+            $(document).ready(function(){
+                $('#home').show();
+                $('#links').hide();
+                $('#aboutme').hide();
+            });
+
+            homelink.onclick = function() {
+                $('#home').show();
+                $('#links').hide();
+                $('#aboutme').hide();
+            }
+
+            linkslink.onclick = function() {
+                $('#home').hide();
+                $('#links').show();
+                $('#aboutme').hide();
+            }
+
+            aboutmelink.onclick = function() {
+                $('#home').hide();
+                $('#links').hide();
+                $('#aboutme').show();
+            }
+
+            moreaboutme.onclick = function() {
+                $('#home').hide();
+                $('#links').hide();
+                $('#aboutme').show();
+            }
 
             const gifs = [
                         "/img/serifsirfgift.gif",
@@ -408,38 +568,6 @@
             span.onclick = function() {
                 modal.style.display = "none";
             }
-
-
-
-
-            var home = document.getElementById("home");
-            var homelink = document.getElementById("homelink");
-            var linkslink = document.getElementById("linkslink");
-            var fanartlink = document.getElementById("fanartlink");
-            var aboutmelink = document.getElementById('aboutmelink');
-            var moreaboutme = document.getElementById('moreaboutme');
-
-            homelink.onclick = function() {
-                home.style.display = "block";
-            }
-
-            linkslink.onclick = function() {
-                home.style.display = "none";
-            }
-
-            fanartlink.onclick = function() {
-                home.style.display = "none";
-            }
-
-            aboutmelink.onclick = function() {
-                home.style.display = "none";
-            }
-
-            moreaboutme.onclick = function() {
-                home.style.display = "none";
-            }
-           
-
 
     </script>
 </html>
