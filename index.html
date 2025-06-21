@@ -19,9 +19,14 @@
             margin: 1%;
             background-color: rgb(27, 25, 25);
             font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            
 
         }
 
+
+        
         .header {
             font-size: x-large;
             display: flex;
@@ -318,12 +323,12 @@
     </style>
 
     </head>
-    <body>
+    <body ondragstart="return false;" ondrop="return false;" >
         <div class="header">
             <div id="window-gif" style="image-rendering: pixelated;"></div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="header-links">
-                <a href="#" id="homelink">home</a>
+                <a href="#" id="homelink" >home</a>
                 <span>&nbsp;&nbsp;</span>
                 <a href="https://coderserif.github.io" target="_blank">coderserif &#8599;&#xFE0E;</a>
                 <span>&nbsp;&nbsp;</span>
@@ -334,8 +339,8 @@
                 
             </div>
             <div id="coolicon">
-                <audio id="sound1" src="/audio/rain.mp3" preload="auto"></audio>
-                <a href="#" onclick="document.getElementById('sound1').play();"><span class="hvr-hang" style="font-size: 80px;">&#9748;&#xFE0E;</span></a>
+                <audio src="/audio/rain.mp3" id="sound1" preload="auto" controls loop muted style="display: none;"></audio>
+                <a href="javascript:void(0);" onclick="toggleMute(); document.getElementById('sound1').play()" id="rainlink"><span class="hvr-hang" style="font-size: 80px;">&#9748;&#xFE0E;</span></a>
             </div>
         </div>
 
@@ -497,11 +502,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
 
-
             var homelink = document.getElementById("homelink");
             var linkslink = document.getElementById("linkslink");
             var aboutmelink = document.getElementById('aboutmelink');
             var moreaboutme = document.getElementById('moreaboutme');
+            
+
+            function toggleMute() {
+                var rain = document.getElementById('sound1');
+                var rainlink = document.getElementById('rainlink');
+
+                rain.muted = !rain.muted
+            }
+
 
             $(document).ready(function(){
                 $('#home').show();
