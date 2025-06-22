@@ -228,19 +228,14 @@
         }
 
         .close {
-            position: absolute;
-            top: 25px;
-            right: 35px; 
+            display: flex;
+            justify-content: center;
+            
             color: #f1f1f1;
             font-size: 30px;
             transition: 0.3s;
         }
 
-        .close:hover, .close:focus {
-            color: #ce0404;
-            text-decoration: none;
-            cursor: pointer;
-        }
 
         @media only screen and (max-width: 700px) {
             .modal-content {
@@ -370,8 +365,13 @@
                 </div>
             </div>
             <div id="modal1" class="modal">
-                <div class="close">click anywhere to close</div>
+                
                 <img class="modal-content" id="showimg" draggable="false">
+                <br>
+                <br>
+                <div class="close">click anywhere to close</div>
+                <br>
+                <br>
             </div >
 
 
